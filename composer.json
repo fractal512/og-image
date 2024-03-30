@@ -1,0 +1,35 @@
+{
+    "name": "fractal512/og-image",
+    "description": "Open Graph image generator based on Intervention Image - PHP image processing library",
+    "keywords": [
+        "open graph",
+        "og-image",
+        "facebook image",
+        "twitter image",
+        "vk image"
+    ],
+    "homepage": "https://github.com/fractal512/og-image",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denys Vashchuk",
+            "email": "fractal512.web.dev@gmail.com",
+            "homepage": "https://github.com/fractal512",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "intervention/image": "^3.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Fractal512\\OpenGraphImage\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
