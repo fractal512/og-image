@@ -24,7 +24,8 @@
     },
     "require-dev": {
         "ext-fileinfo": "*",
-        "mikey179/vfsstream": "^1.6"
+        "mikey179/vfsstream": "^1.6",
+        "phpunit/phpunit": "^9.5"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
