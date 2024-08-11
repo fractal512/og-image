@@ -64,7 +64,7 @@ $image = new OpenGraphImage($config);
 $image->make($text, $background)->save($output);
 ```
 
-Output image format:
+### Output image format
 The format of the output image is autodetected from the path passed to the `save()` method:
 ```php
 // ...
