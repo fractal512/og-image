@@ -44,7 +44,7 @@ class OpenGraphImage
     protected int $textFontSize;
     protected ?string $textFontPath;
 
-    private ImageInterface $image;
+    private ?ImageInterface $image = null;
 
     private string $font = __DIR__ . '/../fonts/Roboto/Roboto-Regular.ttf';
 
@@ -477,6 +477,10 @@ class OpenGraphImage
 
     public function save(string $path): bool
     {
+        if(!($this->image instanceof ImageInterface)) {
+            return false;
+        }
+
         $pathParts = explode('.', $path);
         $extension = strtolower(end($pathParts));
 
@@ -488,8 +492,11 @@ class OpenGraphImage
                 $this->image->toJpeg()->save($path);
                 return true;
             case 'webp':
-                $this->image->toWebp()->save($path);
-                return true;
+                if ($this->driver === 'imagick') {
+                    $this->image->toWebp()->save($path);
+                    return true;
+                }
+                return false;
             default:
                 return false;
         }

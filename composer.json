@@ -22,11 +22,20 @@
         "php": "^8.1",
         "intervention/image": "^3.0"
     },
+    "require-dev": {
+        "ext-fileinfo": "*",
+        "mikey179/vfsstream": "^1.6"
+    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Fractal512\\OpenGraphImage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fractal512\\OpenGraphImage\\Tests\\": "tests/"
         }
     },
     "config": {
