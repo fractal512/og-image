@@ -4,6 +4,13 @@ Open Graph image generator based on Intervention Image - PHP image processing li
 
 ![OG image preview](/docs/assets/og-image-example.png?raw=true)
 
+<p style="text-align: center;" align="center">
+<a href="https://packagist.org/packages/fractal512/og-image" title="Packagist Version"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/fractal512/og-image"></a>
+<a href="https://github.com/fractal512/og-image/actions/workflows/tests.yml"><img src="https://github.com/fractal512/og-image/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+<a href="https://www.php.net/" title="PHP version"><img alt="Packagist PHP Version Support" src="https://img.shields.io/packagist/php-v/fractal512/og-image"></a>
+<a href="https://github.com/fractal512/og-image/blob/master/LICENSE" title="License"><img alt="GitHub License" src="https://img.shields.io/github/license/fractal512/og-image"></a>
+</p>
+
 ## Features:
 
 - Image generation with fully customizable text, logo, background and overlay
@@ -55,6 +62,17 @@ Custom background can be passed as a second parameter in `make()` method:
 $background = __DIR__ . '/background-image.png';
 $image = new OpenGraphImage($config);
 $image->make($text, $background)->save($output);
+```
+
+Output image format:
+The format of the output image is autodetected from the path passed to the `save()` method:
+```php
+// ...
+// supported output image formats: png, jpg, webp (with imagick driver only)
+$output = __DIR__ . '/generated-image.png';
+$image = new OpenGraphImage($config);
+$result = $image->make($text)->save($output);
+// $result is boolean true or false
 ```
 
 ## Configuration
